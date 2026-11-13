@@ -1,0 +1,2 @@
+900.  64.  : R,z antenna position in cm
+0 0        : anglp (>0 down), anglt (>0 right) in degrees
