@@ -1,0 +1,28 @@
+-0.7 35.0 0.001 0.2 0.1   : u_max=p_mac/mc, T_tail, eta_0, psi_0, psi_c
+
+# df type = 0  : Maxwellian. No parameters required
+#
+#         = 1  : LH tail model. Insert 1 row with:
+#                u_max, T_tail, eta_0, psi_0, psi_c
+#               (u_max=p/mc at the end of the tail plateau, T_e in keV,
+#                eta = n_e,tail/n_e,bulk = eta_0*Exp[-((psi-psi_0)/psi_c)**2])
+#
+#         = 2  : Multi-Maxwellian with absolute parameters: n+1 rows nedeed:
+#                      r1> n (number of maxwellians added to bulk)
+#                r2..rn+1> u_i, T_i, eta_0i, psi_0i, psi_ci
+#                         (u_i = toroidal drift, other param same as LH model)
+#
+#         = 3  : Multi-Maxwellian with relative parameters: n+1 rows nedeed:
+#                      r1> n (number of maxwellians added to bulk)
+#                r2..rn+1> u_i/u_thbulk, T_i/T_bulk, eta_0i, psi_0i, psi_ci
+#                         (u_thbulk = bulk thermal vel)
+
+# maxwellian model
+
+# LH model example
+0.4 20.0 0.001 0.2 0.1   : u_max=p_mac/mc, T_tail, eta_0, psi_0, psi_c
+
+# (relative) multi-maxw model example
+2       : n (number of maxwellians added to bulk)
+ 0.4 0.6 0.02 0.2 0.1  : u_0i/u_thbulk, T_i/T_bulk, eta_0i, psi_0i, psi_ci
+-0.4 0.6 0.02 0.2 0.1  : u_0i/u_thbulk, T_i/T_bulk, eta_0i, psi_0i, psi_ci
